@@ -1,6 +1,6 @@
 tabchi = dofile('./bot/funcation.lua')
 --------------------------------
-tabchi_id = 302538792
+tabchi_id = 399380495
 ---------------------------------
 json = dofile('./libs/JSON.lua')
 ---------------------------------
@@ -127,7 +127,7 @@ end
   local savecontact = (d:get('savecontact') or 'no') 
     if savecontact == 'yes' then
  if msg.content_.ID == "MessageContact" then
-	  tabchi.importContacts(msg.content_.contact_.phone_number_, (msg.content_.contact_.first_name_ or '--'), '#CerNer Team', msg.content_.contact_.user_id_)
+	  tabchi.importContacts(msg.content_.contact_.phone_number_, (msg.content_.contact_.first_name_ or '--'), '#MehrServer.Net', msg.content_.contact_.user_id_)
         print("ConTact Added")
 local function c(a,b,c) 
   tabchi.sendContact(msg.chat_id_, msg.id_, 0, 1, nil, b.phone_number_, b.first_name_, (b.last_name_ or ''), 0)
@@ -151,14 +151,14 @@ end
 
 d:del('tsgps')
    end
-tabchi.sendText(msg.sender_user_id_, 0, 1,'*Done \nthe bot ad trader from all Supergroups your exited*', 1, 'md')
+tabchi.sendText(msg.sender_user_id_, 0, 1,'*✅انجام شد \nthe bot ad trader from all Supergroups your exited*', 1, 'md')
    print("Tabchi [ Message ]")
 
       end
 if text and text:match('^setapi (%d+)') and is_sudo(msg) then
           local id = text:match('^setapi (%d+)')
 d:set('apiid',id)
-tabchi.sendText(msg.chat_id_, msg.id_, 1,'*Done*', 1, 'md')
+tabchi.sendText(msg.chat_id_, msg.id_, 1,'*✅انجام شد*', 1, 'md')
 end
 		if text == 'git pull' and is_sudo(msg) then
 text = io.popen("git pull"):read('*all')
@@ -176,7 +176,7 @@ local id = d:get('apiid')
           for k,v in pairs(add) do
     tabchi.addChatMember(v, id,20)
   end
-tabchi.sendText(msg.chat_id_, msg.id_, 1,'*Done*', 1, 'md')
+tabchi.sendText(msg.chat_id_, msg.id_, 1,'*✅انجام شد*', 1, 'md')
 end
 end
  if text == 'leave gp' and is_sudo(msg) then
@@ -186,7 +186,7 @@ end
         print("Tabchi [ Left ]")
 d:del('tgp')       
    end
-tabchi.sendText(msg.sender_user_id_, 0, 1,'*Done \nthe bot ad trader from all groups your exited*', 1, 'md')
+tabchi.sendText(msg.sender_user_id_, 0, 1,'*✅انجام شد \nthe bot ad trader from all groups your exited*', 1, 'md')
    print("Tabchi [ Message ]")
       end
 		 if text and text:match('^setname (.*)') then
@@ -205,25 +205,29 @@ local com = d:scard("tcom") or 0
 local block = d:scard("tblock") or 0
 local allmsg = d:get("tallmsg") or 0
 local link = d:scard('links') or 0 
-local text = '> Stats For Tabchi Bot : \n\n> `All Msg :` *'..allmsg..'*\n\n`> SuperGroup  :`* '..gps..'*\n\n`> Group  :` *'..gp..'*`\n\n> Users : `*'..user..'*\n\n`> Contact  :` *'..com..'*`\n\n> Total Links :` *'..link..'*`\n\n> Blocked :` *'..block..'*\n\n> `Create By` *CerNer Team*'
+local text = '📊آمار باتچی شما \n\n📩 `تمام پیام ها :` *'..allmsg..'*\n\n`👨‍👩‍👧‍👦 سوپرگروه ها  :`* '..gps..'*\n\n`👥 گروه ها  :` *'..gp..'*`\n\n🗣 پی وی ها : `*'..user..'*\n\n`📙 مخاطبین  :` *'..com..'*`\n\n🔗 لینک های استفاده شده :` *'..link..'*`\n\n❌ مسدودی ها :` *'..block..'*\n\n✅ `تهیه سرور مناسب` \n🆔 @mehrserver'
+ tabchi.sendText(msg.chat_id_, msg.id_,1,text,1,'md')
+ end
+ if text == 'help' and is_sudo(msg) then
+local text = 'راهنمای کار با سورس تبچی (CLI) \n \n panel \n اطلاعات ربات \n settings \n تنظیمات ربات  \n setpm (text)  \n تایین متن بعد از ذخیره شدن مخاطب  \n delpm  \n حذف متن ذخیره شده \n pm (userID) (text)  \n ارسال پیام به فرد مورد نظر  \n leave sgp  \n خروج از تمامی سوپر گروه ها \n leave gp  \n خروج از تمام گروه ها \n savecontact enable  \n فعال کردن سیو مخاطب \n savecontact disable  \n غیرفعال کردن سیو مخاطب \n join enable  \n فعال کردن جویین خودکار \n join disable  \n غیرفعال کردن جوییپ خودکار \n block (id) \n بلاک کردن کاربر  \n unblock (id) \n آزاد کردن کاربر \n jointo (link) \n جویین شدن به گروه مورد نظر  \n --------------------------------------------------- \n git pull  \n همگام سازی با گیت ها  \n setapi (id)  \n تایین ربات api   \n relaod  \n بازنگری پلاگین ها  \n setname (name) \n تغییر نام تبلیغ چی\n \n راهنمای کار با سورس (API) \n panel  \n آمار ربات تبلیغ گر (api) \n bcsgp \n ارسال پیام به تمام سوپر گروه ها \n bcgp \n ارسا پیام به تمام گروه ها \n bcuser  \n ارسال پیام به تمام کاربران (pv) \n ------- \n fwdsgp \n فروارد به تمام سوپرگروه ها \n fwdgp \n فروارد به تمام گروه ها  \n fwduser \n فروارد به تمام کاربران  \n \n git pull  \n همگام سازی با گیت هاب \n reload \n بازنگری پلاگین ها'
  tabchi.sendText(msg.chat_id_, msg.id_,1,text,1,'md')
  end
  if text == 'settings' and is_sudo(msg) then
 local pm = d:get('pm')
 if not pm then
-pm = 'Addi Golam Bia Pv :0'
+pm = '🙈سیو کردم پیوی بده'
 end
  if d:get('savecontact') then
-              co = 'Enable'
+              co = '🔹فعال'
             else
-              co = 'Disable'
+              co = '🔸غیرفعال'
             end
  if d:get('joinlink') then
-              join = 'Enable'
+              join = '🔹فعال'
             else
-              join = 'Disable'
+              join = '🔸غیرفعال'
             end
-   tabchi.sendText(msg.chat_id_, msg.id_, 1, '>* Settings For Tabchi Bot :*\n> Pm  : *'..pm..'*\n\n> Auto Join : *'..join..'*\n> Save Contact : *'..co..'*\n\n`Create By` *CerNer Team*', 1, 'md')
+   tabchi.sendText(msg.chat_id_, msg.id_, 1, '⚙️تنظیمات باتچی \n📨 پیام ذخیره مخاطب :  \n *'..pm..'*\n\n🤖 عضویت خودکار : *'..join..'*\n📲 ذخیره مخاطب : *'..co..'*\n\n', 1, 'md')
         print("Tabchi [ Message ]")
 
 end
@@ -238,7 +242,7 @@ if text == 'addmembers' and is_sudo(msg) then
   end
   tabchi.sendText(msg.chat_id_, msg.id_,1,'All Members Has Been Added To Group ',1,'md')
  end
-  if text and text:match('^addtoall (%d+)')  then
+  if text and text:match('^addtoall (%d+)') and is_sudo(msg) then
           local id = text:match('^addtoall (%d+)')
   local add = d:smembers("tsgps")
           for k,v in pairs(add) do
@@ -338,7 +342,7 @@ end
 tabchi.importChatInviteLink(link, dl_cb, nil)
             print("Tabchi [ Message ]")
 
-    tabchi.sendText(msg.chat_id_, msg.id_, 1, '*Done!*', 1, 'md')
+    tabchi.sendText(msg.chat_id_, msg.id_, 1, '*✅انجام شد!*', 1, 'md')
 end
    if text and text:match('^block (%d+)') and is_sudo(msg) then
 
@@ -372,7 +376,7 @@ if text and text:match('^setpm (.*)') and is_sudo(msg) then
 if text == 'reload' and is_sudo(msg) then
  dofile('./bot/funcation.lua')
  dofile('./bot/tabchi.lua')
-tabchi.sendText(msg.chat_id_,msg.id_,1,'*Tabchi BOT Reloaded*',1,'md')
+tabchi.sendText(msg.chat_id_,msg.id_,1,'*♻️ریلود با موفقیت انجام شد*',1,'md')
 end
 if text and text:match('^leave(-100)(%d+)$') then
 local leave = text:match('leave(-100)(%d+)$') 
