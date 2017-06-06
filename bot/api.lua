@@ -1,5 +1,5 @@
 tabchi = dofile('./bot/funcation.lua')
-tabchi_id = 343317686
+tabchi_id = 393052542
 ---------------------------------
 
 json = dofile('./libs/JSON.lua')
@@ -156,7 +156,7 @@ d:del("tallmsg")
 d:del("asgp")
 d:del("tgp")
 d:del("tusers")
-tabchi.sendText(msg.chat_id_, msg.id_,1,' Stats TabChi Has Been Reseted ',1,'md')
+tabchi.sendText(msg.chat_id_, msg.id_,1,' ♻️آمار باتچی با موفقیت ریستارت شد ',1,'md')
         print("Tabchi [ Message ]")
 end
 
@@ -180,7 +180,7 @@ end
 if text == 'reload' and is_sudo(msg) then
  dofile('./bot/funcation.lua')
  dofile('./bot/api.lua')
-tabchi.sendText(msg.chat_id_,msg.id_,1,'*Tabchi Api BOT Reloaded*',1,'md')
+tabchi.sendText(msg.chat_id_,msg.id_,1,'*♻️ریلود با موفقیت انجام شد*',1,'md')
 end
 if text == 'git pull' and is_sudo(msg) then
 text = io.popen("git pull"):read('*all')
@@ -191,7 +191,7 @@ local gps = d:scard("asgp") or 0
 local user = d:scard("ausers")
 local gp = d:scard("agp") or 0
 local allmsg = d:get("aallmsg") or 0
-local text = '> Stats For Tabchi Bot Api : \n\n> `All Msg :` *'..allmsg..'*\n\n`> SuperGroup  :`* '..gps..'*\n\n`> Group  :` *'..gp..'*`\n\n> Users : `*'..user..'*\n\n> `Create By` *CerNer Team*'
+local text = '📊آمار باتچی شما \n\n📩 `تمام پیام ها :` *'..allmsg..'*\n\n`👨‍👩‍👧‍👦 سوپرگروه ها  :`* '..gps..'*\n\n`👥 گروه ها  :` *'..gp..'*`\n\n🗣 پی وی ها : `*'..user..'*\n\n✅ `بهینه شده توسط مهر سرور` \n🆔 @mehrserver'
  tabchi.sendText(msg.chat_id_, msg.id_,1,text,1,'md')
  end
 if is_sudo(msg) then
@@ -203,7 +203,7 @@ if is_sudo(msg) then
         tabchi.sendText(v, 0, 1, text,1, 'md')
           end
    local gps = d:scard("asgp")     
-     local text = '*Youre Message Was Send To* `'..gps..'`* SuperGroups*'
+     local text = '📤`پیام شما برای` *'..gps..'* `سوپرگروه ارسال شد`'
        tabchi.sendText(msg.chat_id_, msg.id_, 1, text, 1, 'md')
           end
           tabchi.getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),cb)
@@ -217,7 +217,7 @@ if is_sudo(msg) then
         tabchi.sendText(v, 0, 1, text,1, 'md')
           end
 					local gp = d:scard("agp")     
-     local text = '*Youre Message Was Send To* `'..gp..'`* Groups*'
+     local text = '📤`پیام شما برای` *'..gps..'* `گروه ارسال شد`*'
        tabchi.sendText(msg.chat_id_, msg.id_, 1, text, 1, 'md')		
           end
           tabchi.getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),cb)
@@ -230,7 +230,7 @@ if is_sudo(msg) then
         tabchi.sendText(v, 0, 1, text,1, 'md')
           end
 local uu = d:scard("ausers")     
-     local text = '*Youre Message Was Send To* `'..uu..'`* Users*'
+     local text = '📤`پیام شما برای` *'..gps..'* `کاربر ارسال شد`'
        tabchi.sendText(msg.chat_id_, msg.id_, 1, text, 1, 'md')
           end
           tabchi.getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),cb)
@@ -242,7 +242,7 @@ local uu = d:scard("ausers")
          tabchi.forwardMessages(v, msg.chat_id_, {[0] = b.id_}, 1)
           end
 local gps = d:scard("asgp")     
-     local text = '*Youre Message Was ForWard To* `'..gps..'`* SuperGroups*'
+     local text = '📬`پیام شما برای` *'..gps..'* `سوپرگروه فوروارد شد`'
        tabchi.sendText(msg.chat_id_, msg.id_, 1, text, 1, 'md')
 
           end
@@ -255,7 +255,7 @@ if text == 'fwdgp' and tonumber(msg.reply_to_message_id_) > 0 then
          tabchi.forwardMessages(v, msg.chat_id_, {[0] = b.id_}, 1)
           end
 					local gp = d:scard("agp")     
-     local text = '*Youre Message Was ForWard To* `'..gp..'`* Groups*'
+     local text = '📬`پیام شما برای` *'..gp..'* `گروه فوروارد شد`'
        tabchi.sendText(msg.chat_id_, msg.id_, 1, text, 1, 'md')
           end
           tabchi.getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),cb)
@@ -268,7 +268,7 @@ if text == 'fwduser' and tonumber(msg.reply_to_message_id_) > 0 then
          tabchi.forwardMessages(v, msg.chat_id_, {[0] = b.id_}, 1)
           end
 					local qq = d:scard("ausers")     
-     local text = '*Youre Message Was ForWard To* `'..qq..'`* Users*'
+     local text = '📬`پیام شما برای` *'..qq..'* `کاربر فوروارد شد`'
        tabchi.sendText(msg.chat_id_, msg.id_, 1, text, 1, 'md')
           end
           tabchi.getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),cb)
