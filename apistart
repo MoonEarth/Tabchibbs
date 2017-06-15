@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd $HOME/TabLiqGar
+cd $HOME/botchi
 token="Token Your Bot api"
 function print_logo() {
 	echo -e "\033[38;5;600m"
@@ -22,8 +22,8 @@ if [ ! $token ]; then
 
   print_logo
    echo -e "\033[38;5;208m"
-   echo -e "                        CerNer Team                           "
+   echo -e "                        Mehr Server                           "
    echo -e "\033[0;00m"
    echo -e "\e[36m"
-curl "https://api.telegram.org/bot346592355:AAHrYe8g8UjrZ3xkh_WMEuvoN9lDhdMVXvE/sendmessage" -F "chat_id=-" -F "text= TabLiqGar IS NOW RUNNING "
+curl "https://api.telegram.org/bot346592355:AAHrYe8g8UjrZ3xkh_WMEuvoN9lDhdMVXvE/sendmessage" -F "chat_id=-" -F "text= botchi IS NOW RUNNING "
     ./tg -s ./bot/api.lua -p PROFILE --bot=$token
