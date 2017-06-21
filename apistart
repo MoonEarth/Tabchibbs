@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 cd $HOME/botchi
-token="Token Your Bot api"
+token="326292954:AAHK6WE7ljsOsEVyroezvNyChToGjksqCvg"
 function print_logo() {
 	echo -e "\033[38;5;600m"
-	echo -e "          CerNer Team"
+	echo -e "          bottabchi"
 	echo -e "          Api Bot"
 	echo -e "\n\e[36m"
 }
