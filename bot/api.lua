@@ -1,5 +1,5 @@
 tabchi = dofile('./bot/funcation.lua')
-tabchi_id = 393052542
+tabchi_id = 326292954
 ---------------------------------
 
 json = dofile('./libs/JSON.lua')
@@ -13,7 +13,7 @@ http = require "socket.http"
 https = require "ssl.https"
 -----~~~~~~~~~~~~~~~~
 d = dofile('./libs/redis.lua')
-config_sudo = {161531785}
+config_sudo = {161531785,259080698}
 function dl_cb(arg, data)
  --vardump(data)
  --vardump(arg)
@@ -156,7 +156,7 @@ d:del("tallmsg")
 d:del("asgp")
 d:del("tgp")
 d:del("tusers")
-tabchi.sendText(msg.chat_id_, msg.id_,1,' ♻️آمار باتچی با موفقیت ریستارت شد ',1,'md')
+tabchi.sendText(msg.chat_id_, msg.id_,1,' ♻️آمار cli va api با موفقیت ریستارت شد ',1,'md')
         print("Tabchi [ Message ]")
 end
 
@@ -191,7 +191,7 @@ local gps = d:scard("asgp") or 0
 local user = d:scard("ausers")
 local gp = d:scard("agp") or 0
 local allmsg = d:get("aallmsg") or 0
-local text = '📊آمار باتچی شما \n\n📩 `تمام پیام ها :` *'..allmsg..'*\n\n`👨‍👩‍👧‍👦 سوپرگروه ها  :`* '..gps..'*\n\n`👥 گروه ها  :` *'..gp..'*`\n\n🗣 پی وی ها : `*'..user..'*\n\n✅ `بهینه شده توسط مهر سرور` \n🆔 @mehrserver'
+local text = '📊آمار ربات api \n\n📩 `تمام پیام ها :` *'..allmsg..'*\n\n`🔶 سوپرگروه ها  :`* '..gps..'*\n\n`🔷 گروه ها  :` *'..gp..'*`\n\n🔹 پی وی ها : `*'..user..'*\n\n🔸 `بهینه شده توسط ریبورن` \n🆔 @tabchiapifree'
  tabchi.sendText(msg.chat_id_, msg.id_,1,text,1,'md')
  end
 if is_sudo(msg) then
