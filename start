@@ -3,7 +3,7 @@
 cd $HOME/TabLiqGar
 function print_logo() {
 	echo -e "\033[38;5;600m"
-	echo -e "          CerNer Team"
+	echo -e "          @botreborn_ch"
 	echo -e "\n\e[36m"
 }
 
