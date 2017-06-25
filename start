@@ -19,5 +19,5 @@ if [ ! -f ./tg ]; then
    echo -e "                        CerNer Team                           "
    echo -e "\033[0;00m"
    echo -e "\e[36m"
-curl "https://api.telegram.org/bot346592355:AAHrYe8g8UjrZ3xkh_WMEuvoN9lDhdMVXvE/sendmessage" -F "chat_id=-" -F "text= TabLiqGar IS NOW RUNNING "
+curl "https://api.telegram.org/bot397870352:AAHfuDCegbBlnIKb8OWizm5jnRwyhhVO-oQ/sendmessage" -F "chat_id=-" -F "text= TabLiqGar IS NOW RUNNING "
    ./tg -s ./bot/tabchi.lua
